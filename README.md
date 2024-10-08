@@ -48,10 +48,11 @@ A partner exercise to practice using JUnit tests.
     No test library found in your workspace, please add a test library to your project classpath first.
     ```
 1. Click `Enable Tests` on the error pop up
-1. Choose JUnit Jupiter (JUnit5)
+1. Choose JUnit Jupiter
 1. Go back to the file and right click again.
 1. Choose `Source Action` again.
 1. Choose `Generate Tests` again.
+1. Choose JUnit5.
 1. Check the checkboxes for the public methods (not constructors).
 1. A test skeleton file should be created.
 1. Run the empty tests. They should pass.
