@@ -43,10 +43,15 @@ A partner exercise to practice using JUnit tests.
 1. Anywhere in the file right-click (cmd+click on Mac).
 1. Choose `Source Action` from the context menu.
 1. Choose `Generate Tests`.
-1. If prompted by an error message complaining that tests are not set up, follow these steps:
-    1. Click the button to enable tests (TODO: double check the phrasing of the error message and update)
-    1. Choose JUnit5
-    1. If necessary, right click and choose `Generate Tests` again
+1. You will likely see an error pop up in the bottom right:
+    ```
+    No test library found in your workspace, please add a test library to your project classpath first.
+    ```
+1. Click `Enable Tests` on the error pop up
+1. Choose JUnit Jupiter (JUnit5)
+1. Go back to the file and right click again.
+1. Choose `Source Action` again.
+1. Choose `Generate Tests` again.
 1. Check the checkboxes for the public methods (not constructors).
 1. A test skeleton file should be created.
 1. Run the empty tests. They should pass.
