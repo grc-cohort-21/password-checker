@@ -61,5 +61,12 @@ You will repeatedly follow the below steps for each test you add. For the rest o
 1. Run all tests and see if they pass. If they do not pass, determine whether there is an issue in your test or if you found a bug in `PasswordChecker.java`. If there is an issue in your test, fix the test. If there is a bug in password checker, fix the bug.
 1. Once the test is passing, pull, add, commit and push the changes. Go back to the beginning of this section and switch the partner whose computer you are using.
 
+## Acceptance testing
+Once you have the file thoroughly tested and all bugs fixed, recompile the program and run the App again.
+
+> Reminder: You should have a minimum of three tests for each public method (not constructor). There should be at least 9 tests overall.
+
+Manually verify that the works as expected. If it doesn't, add a test that covers the bug you discovered, then fix the bug and add/commit/push the changes.
+
 ## Submitting
-Once you have the file thoroughly tested and all bugs fixed, please make a PR to the original repository. Have BOTH partners copy the link to the PR to submit it in Canvas. You will both use the same URL.
+Please make a PR to the original repository. Have BOTH partners copy the link to the PR to submit it in Canvas. You will both use the same URL.
