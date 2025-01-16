@@ -13,6 +13,7 @@ public class PasswordCheckerTest
     assertEquals(checker.describePasswordLength("asaaaaa"), "medium");
   }
 
+  @Test
   public void testingDescribePasswordLengthMedium() 
   {
   PasswordChecker checker = new PasswordChecker(5, 8);
@@ -25,8 +26,13 @@ public class PasswordCheckerTest
   PasswordChecker checker = new PasswordChecker(1, 4);
    String pass = "asdfasdf";
     assertEquals(checker.describePasswordLength(pass), "long");
-    
   }
 
+  @Test
+  public void AlphaNumericSymbolTester() {
+  PasswordChecker checker = new PasswordChecker(1, 4);
+   String pass = "!@#$%^&*()";
+    assertEquals(PasswordChecker.isAlphanumeric(pass), false);
+  }
 
 }
