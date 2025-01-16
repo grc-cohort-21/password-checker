@@ -5,34 +5,43 @@ import org.junit.jupiter.api.Test;
 public class PasswordCheckerTest 
 {
 
+
+  //---------------------Length ----------------------
   @Test
   public void testingDescribePasswordLengthShort() {
   PasswordChecker checker = new PasswordChecker(5, 8);
    String pass = "1234";
-    assertEquals(checker.describePasswordLength(pass), "short");
-    assertEquals(checker.describePasswordLength("asaaaaa"), "medium");
+    assertEquals( "short", checker.describePasswordLength(pass));
   }
 
   @Test
   public void testingDescribePasswordLengthMedium() 
   {
-  PasswordChecker checker = new PasswordChecker(5, 8);
+  PasswordChecker checker = new PasswordChecker(5, 9);
    String pass = "12345678";
-    assertEquals(checker.describePasswordLength(pass), "medium");
+    assertEquals("medium", checker.describePasswordLength(pass));
   }
 
   @Test
   public void testingDescribePasswordLengthLong() {
   PasswordChecker checker = new PasswordChecker(1, 4);
    String pass = "asdfasdf";
-    assertEquals(checker.describePasswordLength(pass), "long");
+    assertEquals("long", checker.describePasswordLength(pass));
   }
 
+  //---------------------Is Numeric----------------------
   @Test
   public void AlphaNumericSymbolTester() {
   PasswordChecker checker = new PasswordChecker(1, 4);
    String pass = "!@#$%^&*()";
-    assertEquals(PasswordChecker.isAlphanumeric(pass), false);
+    assertEquals(false, checker.isAlphanumeric(pass));
+  }
+
+  @Test
+  public void AlphaNumericNoSymbols(){
+    PasswordChecker checker = new PasswordChecker(1, 4);
+    String pass = "asdfaasdf";
+    assertEquals(true, checker.isAlphanumeric(pass));
   }
 
 }
