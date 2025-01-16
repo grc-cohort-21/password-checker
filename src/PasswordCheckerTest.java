@@ -10,9 +10,39 @@ public class PasswordCheckerTest {
     // Delete this test after you have written your other tests
     assertEquals(0, 0);
   }
-
   @Test
   public void testIfPASSWORDchecks() {
-    PasswordChecker pswCheck = new PasswordChecker(0, 0)
+    PasswordChecker pswCheck = new is
+  }
+  @Test public void testTwo() {
+
+  }
+
+  @Test public void testThree() {
+
+  }
+
+  @Test public void testFour() {
+
+  }
+
+  @Test public void testFive() {
+
+  }
+
+  @Test public void testSix() {
+
+  }
+
+  @Test public void testSeven() {
+
+  }
+
+  @Test public void testEight() {
+
+  }
+
+  @Test public void testNine() {
+
   }
 }
