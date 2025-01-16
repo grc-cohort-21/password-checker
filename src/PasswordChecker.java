@@ -26,7 +26,7 @@ public class PasswordChecker {
         this.bannedPasswords.addAll(customBannedPasswords);
     }
 
-    /**
+    /**6
      * Constructor that uses only default banned passwords.
      *
      * @param shortThreshold  Length threshold for short passwords
