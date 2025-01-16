@@ -59,13 +59,13 @@ public class PasswordCheckerTest {
     
   }
 
-  @Test public void testSeven() {
-    // Arrange
+  @Test public void testIfAllUpperCaseBannedPasswordsWork() { // test 7
+    // Arrange - all the stuff you need before starting your test
+    isBannedPassword uppercaseHello = new isBannedPassword("HELLO");
 
-    // Act
+    // Act - actually making something happen; calling a method
 
-    // Assert
-
+    // Assert - did what i actually got match what i was expecting
   }
 
   @Test public void testEight() {
