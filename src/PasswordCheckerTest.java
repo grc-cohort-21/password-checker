@@ -11,4 +11,12 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
 
+  @Test
+  public void testHelloWorld2IsAlphanumeric() {
+    PasswordChecker passwordUtils = new PasswordChecker(6, 12);
+    String password = "HelloWorld2";
+    boolean result = passwordUtils.isAlphanumeric(password);
+    assertEquals(true, result);
+  }
+
 }
