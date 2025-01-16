@@ -2,7 +2,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class PasswordCheckerTest {
+public class PasswordCheckerTest 
+{
 
   @Test
   public void testingDescribePasswordLengthShort() {
@@ -20,5 +21,6 @@ public class PasswordCheckerTest {
     assertEquals(checker.describePasswordLength(pass), "long");
     
   }
+
 
 }
