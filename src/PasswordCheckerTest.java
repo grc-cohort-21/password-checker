@@ -44,4 +44,10 @@ public class PasswordCheckerTest
     assertEquals(true, checker.isAlphanumeric(pass));
   }
 
+  @Test
+  public void AlphaNumericMixed(){
+    PasswordChecker checker = new PasswordChecker(1, 4);
+    String pass = "Pass!#$%^&";
+    assertEquals(true, checker.isAlphanumeric(pass));
+  }
 }
