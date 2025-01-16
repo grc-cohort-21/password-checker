@@ -17,4 +17,15 @@ public class PasswordCheckerTest {
     assertEquals("long", copy);
   }
  
+  @Test
+  public void isAlphaNumericVerification() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    boolean onlyLetters= password.isAlphanumeric("start");
+   
+    // Assert
+    assertEquals(true, onlyLetters);
+   
+  }
 }
