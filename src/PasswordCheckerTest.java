@@ -31,4 +31,25 @@ public class PasswordCheckerTest {
     String passwordLength = checker.describePasswordLength("lllllllll");
     assertEquals("long", passwordLength);
   }
+
+  @Test
+  public void testAllIsAlphanumeric(){
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    Boolean actualBoolean = checker.isAlphanumeric("jhfjdb89579823");
+    assertEquals(true, actualBoolean);
+  }
+
+  @Test
+  public void testAllIsNotAlphanumeric(){
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    Boolean actualBoolean = checker.isAlphanumeric("&^^&^%&*%$%$#___");
+    assertEquals(false, actualBoolean);
+  }
+
+  @Test
+  public void testSomeAreAlphanumeric(){
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    Boolean actualBoolean = checker.isAlphanumeric("jhfj____9579823");
+    assertEquals(false, actualBoolean);
+  }
 }
