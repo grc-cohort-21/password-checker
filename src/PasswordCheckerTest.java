@@ -23,9 +23,9 @@ public class PasswordCheckerTest {
     PasswordChecker password = new PasswordChecker(6, 12);
     // Act
     boolean onlyLetters= password.isAlphanumeric("start");
-   
+    boolean onlySpecial = password.isAlphanumeric("////:::???");
     // Assert
     assertEquals(true, onlyLetters);
-   
+    assertEquals(false, onlySpecial);
   }
 }
