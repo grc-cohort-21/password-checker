@@ -23,7 +23,7 @@ A partner exercise to practice using JUnit tests.
 ## Understanding the program
 1. Compile the program
     ```
-    javac src/*.java
+    javac -cp src src/App.java src/PasswordChecker.java
     ```
 1. Run the program
     ```
@@ -38,25 +38,11 @@ A partner exercise to practice using JUnit tests.
     > There are some bugs in this file! If you see them, please do not fix them yet. We will be writing tests that we expect to trigger these bugs.
 
 ## Setting Up Tests
-1. Choose one partner to write code first. Use only their computer for this section, but talk to each other and work together on how to do it.
-1. Open `PasswordChecker.java`.
-1. Anywhere in the file right-click (cmd+click on Mac).
-1. Choose `Source Action` from the context menu.
-1. Choose `Generate Tests`.
-1. You will likely see an error pop up in the bottom right:
-    ```
-    No test library found in your workspace, please add a test library to your project classpath first.
-    ```
-1. Click `Enable Tests` on the error pop up
-1. Choose JUnit Jupiter
-1. Go back to the file and right click again.
-1. Choose `Source Action` again.
-1. Choose `Generate Tests` again.
-1. Choose JUnit5.
-1. Check the checkboxes for the public methods (not constructors).
-1. A test skeleton file should be created.
-1. Run the empty tests. They should pass.
-1. Pull, then add, commit, and push the changes. 
+1. Open `PasswordCheckerTest.java`
+1. Look at the dummy test inside it. This test is just used to validate your VS Code setup, please delete it once you write your actual tests.
+1. In VS Code, click on the test beaker on the left bar
+1. Use the triangle to run the dummy test. You should see it pass with a green checkmark
+
 
 
 ## Writing Tests
