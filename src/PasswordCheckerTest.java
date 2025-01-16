@@ -60,11 +60,18 @@ public class PasswordCheckerTest
     assertEquals(true, checker.isBannedPassword(pass));
   }
 
-  @Test public void bannedPasswordCheckermixed()
+  @Test
+  public void bannedPasswordCheckermixed()
   {
     PasswordChecker checker = new PasswordChecker(1, 4);
-    String pass = "SuperPassword";
+    String pass = "Password1234";
     assertEquals(false, checker.isBannedPassword(pass));
   }
 
+  @Test
+  public void nonBannedPasswords(){
+    PasswordChecker checker = new PasswordChecker(1, 4);
+    String pass = "anything1wanth3r!";
+    assertEquals(false, checker.isBannedPassword(pass));
+  }
 }
