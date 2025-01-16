@@ -63,4 +63,14 @@ public class PasswordCheckerTest
      assertEquals(false, actBoolean);
   }
 
+  @Test
+  public void testIsAlphanumeric() {
+    //Arrange
+    PasswordChecker isAlphanumeric = new PasswordChecker(6, 12);
+    String password = "Alphanumeric";
+    //Act
+    Boolean actualBoolean = isAlphanumeric.isAlphanumeric(password);
+    //Assert
+    assertEquals(true, actualBoolean);
+  }
 }
