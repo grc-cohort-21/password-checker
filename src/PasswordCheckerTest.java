@@ -48,6 +48,18 @@ public class PasswordCheckerTest
   public void AlphaNumericMixed(){
     PasswordChecker checker = new PasswordChecker(1, 4);
     String pass = "Pass!#$%^&";
-    assertEquals(true, checker.isAlphanumeric(pass));
+    assertEquals(false, checker.isAlphanumeric(pass));
   }
+
+  //----------Banned Password Tests------------------
+
+  @Test
+  public void bannedPasswordChecker(){
+    PasswordChecker checker = new PasswordChecker(1, 4);
+    String pass = "letmein";
+    assertEquals(true, checker.isBannedPassword(pass));
+  }
+
+  
+
 }
