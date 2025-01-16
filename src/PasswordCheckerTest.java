@@ -11,4 +11,24 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
 
+  @Test
+  public void confirmShortPasswordLength() {
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    String passwordLength = checker.describePasswordLength("ll");
+    assertEquals("short", passwordLength);
+  }
+
+  @Test
+  public void confirmMediumPasswordLength() {
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    String passwordLength = checker.describePasswordLength("llll");
+    assertEquals("medium", passwordLength);
+  }
+
+  @Test
+  public void confirmLongPasswordLength() {
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    String passwordLength = checker.describePasswordLength("lllllllll");
+    assertEquals("long", passwordLength);
+  }
 }
