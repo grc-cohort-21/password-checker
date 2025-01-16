@@ -1,5 +1,8 @@
 import static org.junit.Assert.assertEquals;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.junit.jupiter.api.Test;
 
 public class PasswordCheckerTest {
@@ -64,4 +67,13 @@ public class PasswordCheckerTest {
     Boolean actualIsBanned = checker.isBannedPassword("password1234");
     assertEquals(false, actualIsBanned);
   }
+
+  @Test void testCustomPasswordIsBanned() {
+    Set<String> set = new HashSet<>();
+    set.add("579823");
+    PasswordChecker checker = new PasswordChecker(3, 8, set);
+    Boolean actualIsBanned = checker.isBannedPassword("579823");
+    assertEquals(true, actualIsBanned);
+  }
+
 }
