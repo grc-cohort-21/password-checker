@@ -13,7 +13,7 @@ public class PasswordCheckerTest {
   @Test
   public void CheckThePassWordLength() {
     // Arrange
-    PasswordChecker 
+    PasswordChecker validator = new PasswordChecker(0, 0);
     // Act
     // Assert
   }

@@ -14,7 +14,7 @@ public class PasswordChecker {
      * @param shortThreshold  Length threshold for short passwords
      * @param mediumThreshold Length threshold for medium passwords
      * @param customBannedPasswords Set of banned passwords to be added to the default set
-     */
+     */     
     public PasswordChecker(int shortThreshold, int mediumThreshold, Set<String> customBannedPasswords) {
         this.shortThreshold = shortThreshold;
         this.mediumThreshold = mediumThreshold;
