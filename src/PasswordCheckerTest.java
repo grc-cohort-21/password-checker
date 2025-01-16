@@ -9,7 +9,10 @@ public class PasswordCheckerTest {
     PasswordChecker password = new PasswordChecker(6, 12);
     // Act
     String hi = password.describePasswordLength("hi");
+    String bye = password.describePasswordLength("goodbye");
     // Assert
     assertEquals("short", hi);
+    assertEquals("medium", bye);
   }
+ 
 }
