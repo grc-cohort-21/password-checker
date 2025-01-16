@@ -79,7 +79,7 @@ public class PasswordChecker {
      * @param password The password to check
      * @return true if the password is banned, false otherwise
      */
-    public boolean isBannedPassword(String password) {
+    public boolean isBannedPassword(String password) { 
         return bannedPasswords.contains(password.toLowerCase());
     }
 
