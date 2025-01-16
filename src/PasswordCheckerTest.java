@@ -56,6 +56,16 @@ public class PasswordCheckerTest {
   }
 
   @Test
+  public void testContainABannedPassword(){
+    PasswordChecker testV = new PasswordChecker(6, 12);
+    String password = "containsletmein";
+
+    Boolean testTF = testV.isBannedPassword(password);
+
+    assertEquals(false, testTF);
+  }
+
+  @Test
   public void testPasswordLengthIfWorks(){
     PasswordChecker testV = new PasswordChecker(6, 12);
     String password = "test";
