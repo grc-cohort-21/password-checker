@@ -29,6 +29,24 @@ public class PasswordCheckerTest
 
 
 
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // tests if isBanned Password method returns true if a banned password is entered
     @Test
     public void doesBannedPasswordReturnTrue()
     {
@@ -41,7 +59,8 @@ public class PasswordCheckerTest
       // Assert
       assertEquals(true, result);  
     }
-
+    
+    // tests if isBanned Password method returns false if a valid password is entered
     @Test
     public void doesValidPasswordReturnFalse()
     {
@@ -55,6 +74,8 @@ public class PasswordCheckerTest
       assertEquals(false, result);  
     }
 
+  
+    
 
 
 
