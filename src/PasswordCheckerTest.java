@@ -40,4 +40,14 @@ public class PasswordCheckerTest
      assertEquals("long", actualLength);
   }
 
+  @Test
+  public void testAlphanumericStart() {
+    //Arange
+    PasswordChecker symbolStart = new PasswordChecker(6, 12);
+    String password = "&%brain";
+    //Act
+    Boolean actualBoolean = symbolStart.isAlphanumeric(password);
+    //Assert
+    assertEquals(false, actualBoolean);
+  }
 }
