@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 public class PasswordCheckerTest 
 {
 
-  @Test
+  // Tests for describePasswordLength() --------------------------------------------------------
+
+     @Test
   public void testPasswordLengthShort()
   {
      // Arrange
@@ -40,6 +42,8 @@ public class PasswordCheckerTest
      assertEquals("long", actualLength);
   }
 
+
+  // Tests for isAlphanumeric() -----------------------------------------------------------------
   @Test
   public void testAlphanumericStart() {
     //Arange
@@ -73,4 +77,20 @@ public class PasswordCheckerTest
     //Assert
     assertEquals(true, actualBoolean);
   }
+
+
+  // Tests for isBannedPassword() -----------------------------------------------------------------
+  @Test
+  public void testBannedPassword()
+  {
+     // Arrange
+     PasswordChecker isBanned = new PasswordChecker(6, 12);
+     String password = "123456";
+     // Act
+     Boolean actualBan = isBanned.isBannedPassword(password);
+     // Assert
+     assertEquals(true, actualBan);
+  }
+
+
 }
