@@ -11,8 +11,10 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
   @Test
-  public void testIfPASSWORDchecks() {
-    PasswordChecker pswCheck = new is
+  public void testIfCaseSensBanned()) {
+    isBannedPassword bannedPsw = new isBannedPassword("hELlO");
+    boolean actualTF = bannedPasswords.contains(bannedPsw);
+    assertEquals(true,)
   }
   @Test public void testTwo() {
     // Arrange
