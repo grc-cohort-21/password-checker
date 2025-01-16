@@ -52,4 +52,16 @@ public class PasswordCheckerTest {
     Boolean actualBoolean = checker.isAlphanumeric("jhfj____9579823");
     assertEquals(false, actualBoolean);
   }
+
+  @Test void testPasswordIsBanned() {
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    Boolean actualIsBanned = checker.isBannedPassword("password123");
+    assertEquals(true, actualIsBanned);
+  }
+
+  @Test void testPasswordIsNotBanned() {
+    PasswordChecker checker = new PasswordChecker(3, 8);
+    Boolean actualIsBanned = checker.isBannedPassword("password1234");
+    assertEquals(false, actualIsBanned);
+  }
 }
