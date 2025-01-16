@@ -24,8 +24,10 @@ public class PasswordCheckerTest {
     // Act
     boolean onlyLetters= password.isAlphanumeric("start");
     boolean onlySpecial = password.isAlphanumeric("////:::???");
+    boolean mixed = password.isAlphanumeric("345gl?ty//");
     // Assert
     assertEquals(true, onlyLetters);
     assertEquals(false, onlySpecial);
+    assertEquals(false, mixed);
   }
 }
