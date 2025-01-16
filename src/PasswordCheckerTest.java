@@ -50,4 +50,17 @@ public class PasswordCheckerTest
     //Assert
     assertEquals(false, actualBoolean);
   }
+
+  @Test
+  public void testAlphanumericMiddle()
+  {
+     // Arrange
+     PasswordChecker symbolMiddle = new PasswordChecker(6, 12);
+     String password = "Orange&Purple";
+     // Act
+     Boolean actBoolean = symbolMiddle.isAlphanumeric(password);
+     // Assert
+     assertEquals(false, actBoolean);
+  }
+
 }
