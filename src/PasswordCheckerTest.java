@@ -28,4 +28,16 @@ public class PasswordCheckerTest
     assertEquals("medium", actualLength);
   }
 
+  @Test
+  public void testPasswordLengthLong ()
+  {
+     // Arrange
+     PasswordChecker longName = new PasswordChecker(6, 12);
+     String password  = "GreenMonkeys";
+     // Act
+     String actualLength =  longName.describePasswordLength(password);
+     // Assert
+     assertEquals("long", actualLength);
+  }
+
 }
