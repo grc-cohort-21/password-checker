@@ -11,4 +11,14 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
 
+  @Test
+  public void testCaseSensitiveForBan(){
+    PasswordChecker testV = new PasswordChecker(6, 12);
+    String password = "LetMeIN";
+
+    Boolean testTF = testV.isBannedPassword(password);
+
+    assertEquals(true, testTF);
+  }
+
 }
