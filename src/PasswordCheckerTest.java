@@ -11,4 +11,8 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
 
+  @Test
+  public void testIfPASSWORDchecks() {
+    PasswordChecker pswCheck = new PasswordChecker(0, 0)
+  }
 }
