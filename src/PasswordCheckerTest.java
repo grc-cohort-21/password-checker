@@ -30,4 +30,14 @@ public class PasswordCheckerTest {
     assertEquals(false, onlySpecial);
     assertEquals(false, mixed);
   }
+
+  @Test
+  public void isBannedPasswordVerification() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    boolean banned = password.isBannedPassword("password123");
+    // Assert
+    assertEquals(true, banned);
+  }
 }
