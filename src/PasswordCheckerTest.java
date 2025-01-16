@@ -12,35 +12,75 @@ public class PasswordCheckerTest {
   }
 
   @Test public void testTwo() {
+    // Arrange
 
+    // Act
+
+    // Assert
+    
   }
 
   @Test public void testThree() {
+    // Arrange
 
+    // Act
+
+    // Assert
+    
   }
 
   @Test public void testFour() {
+    // Arrange
 
+    // Act
+
+    // Assert
+    
   }
 
   @Test public void testFive() {
+    // Arrange
 
+    // Act
+
+    // Assert
+    
   }
 
   @Test public void testSix() {
+    // Arrange
 
+    // Act
+
+    // Assert
+    
   }
 
   @Test public void testSeven() {
+    // Arrange
+
+    // Act
+
+    // Assert
 
   }
 
   @Test public void testEight() {
+    // Arrange
 
+    // Act
+
+    // Assert
+    
   }
 
   @Test public void testNine() {
+    // Arrange
 
+    // Act
+
+    // Assert
+    
   }
 
 }
