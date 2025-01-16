@@ -29,4 +29,26 @@ public class PasswordCheckerTest {
     assertEquals(true, testTF);
   }
 
+  @Test
+  public void testSpaceAfterBanPassword(){
+    PasswordChecker testV = new PasswordChecker(6, 12);
+    String password = "letmein ";
+
+    Boolean testTF = testV.isBannedPassword(password);
+
+    assertEquals(false, testTF);
+  }
+
+  @Test
+  public void testPasswordLengthIfWorks(){
+    PasswordChecker testV = new PasswordChecker(6, 12);
+    String password = "test";
+    String password2 = "Test3239";
+    String password3 = "Test1234567890";
+
+    assertEquals("short", testV.describePasswordLength(password));
+    assertEquals("medium", testV.describePasswordLength(password2));
+    assertEquals("long", testV.describePasswordLength(password3));
+  }
+
 }
