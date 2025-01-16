@@ -10,9 +10,11 @@ public class PasswordCheckerTest {
     // Act
     String hi = password.describePasswordLength("hi");
     String bye = password.describePasswordLength("goodbye");
+    String copy = password.describePasswordLength("uncopoyrightable");
     // Assert
     assertEquals("short", hi);
     assertEquals("medium", bye);
+    assertEquals("long", copy);
   }
  
 }
