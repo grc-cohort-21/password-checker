@@ -16,6 +16,7 @@ public class PasswordCheckerTest
     PasswordChecker validator = new PasswordChecker(0, 0);
     // Act
     // Assert
+  }
 
     
     
@@ -29,17 +30,29 @@ public class PasswordCheckerTest
 
 
     @Test
-    public void doesBannedPasswordsreturnPassword()
+    public void doesBannedPasswordReturnTrue()
     {
       // Arrange
-      PasswordChecker test = new PasswordChecker(10,10,testSet);
+      PasswordChecker testCheck1 = new PasswordChecker(10,10,testSet);
   
       // Act
-     
-      
+      boolean result = testCheck1.isBannedPassword("password");
+           
       // Assert
-      
+      assertEquals(true, result);  
+    }
+
+    @Test
+    public void doesValidPasswordReturnFalse()
+    {
+      // Arrange
+      PasswordChecker testCheck1 = new PasswordChecker(10,10,testSet);
   
+      // Act
+      boolean result = testCheck1.isBannedPassword("thisaValidpassword123");
+           
+      // Assert
+      assertEquals(false, result);  
     }
 
 
