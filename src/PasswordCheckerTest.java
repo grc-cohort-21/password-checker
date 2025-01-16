@@ -11,4 +11,36 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
 
+  @Test public void testTwo() {
+
+  }
+
+  @Test public void testThree() {
+
+  }
+
+  @Test public void testFour() {
+
+  }
+
+  @Test public void testFive() {
+
+  }
+
+  @Test public void testSix() {
+
+  }
+
+  @Test public void testSeven() {
+
+  }
+
+  @Test public void testEight() {
+
+  }
+
+  @Test public void testNine() {
+
+  }
+
 }
