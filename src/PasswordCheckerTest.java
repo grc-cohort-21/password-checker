@@ -37,7 +37,9 @@ public class PasswordCheckerTest {
     PasswordChecker password = new PasswordChecker(6, 12);
     // Act
     boolean banned = password.isBannedPassword("password123");
+    boolean caseInsensetive = password.isBannedPassword("HELLO");
     // Assert
     assertEquals(true, banned);
+    assertEquals(true, caseInsensetive);
   }
 }
