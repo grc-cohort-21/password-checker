@@ -8,12 +8,15 @@ public class PasswordChecker {
     private Set<String> bannedPasswords;
 
     /**
-     * Constructor that allows setting custom thresholds for short and medium password lengths,
-     * and merges a set of custom banned passwords with the default banned passwords.
+     * Constructor that allows setting custom thresholds for short and medium
+     * password lengths,
+     * and merges a set of custom banned passwords with the default banned
+     * passwords.
      *
-     * @param shortThreshold  Length threshold for short passwords
-     * @param mediumThreshold Length threshold for medium passwords
-     * @param customBannedPasswords Set of banned passwords to be added to the default set
+     * @param shortThreshold        Length threshold for short passwords
+     * @param mediumThreshold       Length threshold for medium passwords
+     * @param customBannedPasswords Set of banned passwords to be added to the
+     *                              default set
      */
     public PasswordChecker(int shortThreshold, int mediumThreshold, Set<String> customBannedPasswords) {
         this.shortThreshold = shortThreshold;
@@ -26,7 +29,8 @@ public class PasswordChecker {
         this.bannedPasswords.addAll(customBannedPasswords);
     }
 
-    /**6
+    /**
+     * 6
      * Constructor that uses only default banned passwords.
      *
      * @param shortThreshold  Length threshold for short passwords
@@ -65,16 +69,16 @@ public class PasswordChecker {
             char c = password.charAt(i);
             if (!Character.isLetterOrDigit(c)) {
                 return false;
-            } else {
-                return true;
             }
         }
         return true;
     }
 
     /**
-     * Checks if the password is in the banned password list. The check is case-insensitive,
-     * meaning "password123" and "PASSWORD123" will both be treated as banned if present.
+     * Checks if the password is in the banned password list. The check is
+     * case-insensitive,
+     * meaning "password123" and "PASSWORD123" will both be treated as banned if
+     * present.
      *
      * @param password The password to check
      * @return true if the password is banned, false otherwise
@@ -90,7 +94,6 @@ public class PasswordChecker {
      */
     private Set<String> getDefaultBannedPasswords() {
         return new HashSet<>(Arrays.asList(
-            "password123", "123456", "qwerty", "letmein", "password", "hello"
-        ));
+                "password123", "123456", "qwerty", "letmein", "password", "hello"));
     }
 }

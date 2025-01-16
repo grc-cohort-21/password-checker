@@ -20,6 +20,22 @@ public class PasswordCheckerTest {
   }
 
   @Test
+  public void testHelloWorldHashtag2IsNotAlphanumeric() {
+    PasswordChecker passwordUtils = new PasswordChecker(6, 12);
+    String password = "HelloWorld#2";
+    boolean result = passwordUtils.isAlphanumeric(password);
+    assertEquals(false, result);
+  }
+
+  @Test
+  void test2HelloWorldIsAlphanumeric() {
+    PasswordChecker passwordUtils = new PasswordChecker(6, 12);
+    String password = "2HelloWorld";
+    boolean result = passwordUtils.isAlphanumeric(password);
+    assertEquals(true, result);
+  }
+
+  @Test
   public void testCaseSensitiveForBan() {
     PasswordChecker testV = new PasswordChecker(6, 12);
     String password = "LetMeIN";
