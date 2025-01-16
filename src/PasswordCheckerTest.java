@@ -46,7 +46,7 @@ public class PasswordCheckerTest {
   }
 
   @Test
-  public void testSpaceAfterBanPassword(){
+  public void testSpaceAfterBanPassword() {
     PasswordChecker testV = new PasswordChecker(6, 12);
     String password = "letmein ";
 
@@ -56,15 +56,26 @@ public class PasswordCheckerTest {
   }
 
   @Test
-  public void testPasswordLengthIfWorks(){
+  public void testPasswordLengthShort() {
     PasswordChecker testV = new PasswordChecker(6, 12);
     String password = "test";
-    String password2 = "Test3239";
-    String password3 = "Test1234567890";
 
     assertEquals("short", testV.describePasswordLength(password));
-    assertEquals("medium", testV.describePasswordLength(password2));
-    assertEquals("long", testV.describePasswordLength(password3));
   }
 
+  @Test
+  public void testPasswordLengthMedium() {
+    PasswordChecker testV = new PasswordChecker(6, 12);
+    String password2 = "Test3239";
+
+    assertEquals("medium", testV.describePasswordLength(password2));
+  }
+
+  @Test
+  public void testPasswordLengthLong() {
+    PasswordChecker testV = new PasswordChecker(6, 12);
+    String password3 = "Test1234567890";
+
+    assertEquals("long", testV.describePasswordLength(password3));
+  }
 }
