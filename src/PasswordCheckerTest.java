@@ -11,4 +11,23 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
 
+  // certain common characters are not handled correctly
+  @Test
+  public void testIsAlphanumericForCommonSpecialSymbols() {
+    
+    // Arrange
+    // setting up a PasswordChecker with the default configuration
+    PasswordChecker checker = new PasswordChecker(6, 12);
+
+    // a test password containing a common symbols (£ British Pound symbol/Alt-0163)
+    String testPassword = "2)]\"\'£";
+
+    // Act
+    boolean results = checker.isAlphanumeric(testPassword);
+
+    // Assert
+    assertEquals(false, results);
+  
+  }
+
 }
