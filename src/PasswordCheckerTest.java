@@ -10,7 +10,9 @@ public class PasswordCheckerTest {
     // Delete this test after you have written your other tests
     assertEquals(0, 0);
   }
+  //3 tests for describePasswordLength
 
+  //3 tests for isAlphanumeric
   // certain common characters are not handled correctly
   @Test
   public void testIsAlphanumericForCommonSpecialSymbols() {
@@ -27,7 +29,10 @@ public class PasswordCheckerTest {
 
     // Assert
     assertEquals(false, results);
-  
   }
+  
+  //3 tests for getDefaultBannedPasswords
+
+
 
 }
