@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class PasswordCheckerTest 
 {
-  Set<String> testSet = new HashSet<>(Arrays.asList("password123", "123456", "qwerty", "letmein", "password", "hello"));
+  Set<String> customSet = new HashSet<>(Arrays.asList("pa$$word", "p@ssw0rd", "opensesame", "987654"));
 
   public void CheckThePassWordLength() 
   {
@@ -46,36 +46,51 @@ public class PasswordCheckerTest
   
   
   
-  // tests if isBanned Password method returns true if a banned password is entered
+  
+  // tests if isBannedPassword method returns true if a default banned password is entered
     @Test
-    public void doesBannedPasswordReturnTrue()
+    public void doesIsBannedPasswordReturnTrueWhenDefaultInvalid()
     {
       // Arrange
-      PasswordChecker testCheck1 = new PasswordChecker(10,10,testSet);
+      PasswordChecker testCheck = new PasswordChecker(10,10,customSet);
   
       // Act
-      boolean result = testCheck1.isBannedPassword("password");
+      boolean result = testCheck.isBannedPassword("password");
            
       // Assert
       assertEquals(true, result);  
     }
+
+
+     // tests if isBannedPassword method returns true if a custom banned password is entered
+     @Test
+     public void doesIsBannedPasswordReturnTrueWhenCustomInvalid()
+     {
+       // Arrange
+       PasswordChecker testCheck = new PasswordChecker(10,10,customSet);
+   
+       // Act
+       boolean result = testCheck.isBannedPassword("opensesame");
+            
+       // Assert
+       assertEquals(true, result);  
+     }
+
     
-    // tests if isBanned Password method returns false if a valid password is entered
+    // tests if isBannedPassword method returns false if a valid password is entered
     @Test
-    public void doesValidPasswordReturnFalse()
+    public void doesIsBannedPasswordReturnFalseWhenValid()
     {
       // Arrange
-      PasswordChecker testCheck1 = new PasswordChecker(10,10,testSet);
+      PasswordChecker testCheck = new PasswordChecker(10,10,customSet);
   
       // Act
-      boolean result = testCheck1.isBannedPassword("thisaValidpassword123");
+      boolean result = testCheck.isBannedPassword("thisaValidpassword123");
            
       // Assert
       assertEquals(false, result);  
     }
-
   
-    
 
 
 
