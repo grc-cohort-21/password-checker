@@ -62,6 +62,19 @@ public class PasswordCheckerTest {
     // Assert
     assertEquals(false, results);
   }
+
+  @Test 
+  public void testIsAlphanumericForSpace(){
+    //Arrange
+    PasswordChecker checker = new PasswordChecker(0, 0);
+    String testPassord = " ";
+
+    //Act
+    boolean result = checker.isAlphanumeric(testPassord);
+
+    //Assert
+    assertEquals(false,result);
+  }
   
   //3 tests for getDefaultBannedPasswords
   @Test
