@@ -10,7 +10,23 @@ public class PasswordCheckerTest {
     // Delete this test after you have written your other tests
     assertEquals(0, 0);
   }
+
   //3 tests for describePasswordLength
+  @Test
+  public void testShortPasswordLength() {
+    //Arrange
+    // what does it do with 0?    
+    PasswordChecker checker = new PasswordChecker(0, 0);
+
+    // testing empty password
+    String testPassword = "a";
+
+    //Act
+    String results = checker.describePasswordLength(testPassword);
+
+    //Assert
+    assertEquals("long",results);
+  }
 
   //3 tests for isAlphanumeric
   // certain common characters are not handled correctly
