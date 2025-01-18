@@ -1,14 +1,99 @@
 import static org.junit.Assert.assertEquals;
 
+import java.util.*;
+
 import org.junit.jupiter.api.Test;
 
 public class PasswordCheckerTest {
-
   @Test
-  public void testDummy() {
-    // This test is used only to validate that your VS Code setup is working
-    // Delete this test after you have written your other tests
-    assertEquals(0, 0);
+  public void desribePasswordLengthVerificationOne() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    String hi = password.describePasswordLength("hi");
+    // Assert
+    assertEquals("short", hi);
   }
 
+  @Test
+  public void desribePasswordLengthVerificationTwo() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    String bye = password.describePasswordLength("goodbye");
+    // Assert
+    assertEquals("medium", bye);
+  }
+
+  @Test
+  public void desribePasswordLengthVerificationThree() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    String copy = password.describePasswordLength("uncopoyrightable");
+    // Assert
+    assertEquals("long", copy);
+  }
+ 
+  @Test
+  public void isAlphaNumericVerificationOne() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    boolean validPassword = password.isAlphanumeric("start345");
+    // Assert
+    assertEquals(true, validPassword);
+  }
+
+  @Test
+  public void isAlphaNumericVerificationTwo() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    boolean onlySpecial = password.isAlphanumeric("////:::???");
+    // Assert
+    assertEquals(false, onlySpecial);
+  }
+
+  @Test
+  public void isAlphaNumericVerificationThree() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    boolean mixed = password.isAlphanumeric("345glty/");
+    // Assert
+    assertEquals(false, mixed);
+  }
+
+  @Test
+  public void isBannedPasswordVerificationOne() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    boolean notBanned = password.isBannedPassword("thisisnotbanned");
+    // Assert
+    assertEquals(false, notBanned);
+  }
+
+  @Test
+  public void isBannedPasswordVerificationTwo() {
+    // Arrange
+    PasswordChecker password = new PasswordChecker(6, 12);
+    // Act
+    boolean caseInsensetive = password.isBannedPassword("HELLO");
+    // Assert
+    assertEquals(true, caseInsensetive);
+  }
+
+  @Test
+  public void isBannedPasswordVerificationThree() {
+    // Arrange
+    Set<String> customBanned = new HashSet<>();
+    customBanned.add("h3llothere");
+    PasswordChecker password = new PasswordChecker(6, 12, customBanned);
+    // Act
+    boolean banned = password.isBannedPassword("h3llothere");
+    // Assert
+    assertEquals(true, banned);
+  }
 }
