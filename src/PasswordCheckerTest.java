@@ -43,9 +43,22 @@ public class PasswordCheckerTest {
 
     //Assert
     assertEquals(true,results);
-
   }
 
+  @Test
+  public void testCheckIfPasswordIsNotBanned (){
+    //Arange
+    PasswordChecker checker = new PasswordChecker(6, 12);
+
+    // this test password shouldn't cause a problem
+    String testPassword = "testPassword";
+
+    //Act
+    boolean results= checker.isBannedPassword(testPassword);
+
+    //Assert
+    assertEquals(false,results);
+  }
 
 
 }
