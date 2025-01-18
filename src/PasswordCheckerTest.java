@@ -30,7 +30,7 @@ public class PasswordCheckerTest {
 
 
 @Test
-  public void tetLongPasswordLenght(){
+  public void testMediumPasswordLenght(){
     //Arrange
     PasswordChecker checker = new PasswordChecker(6, 12);
     String testPassword ="Password123";
@@ -42,6 +42,15 @@ public class PasswordCheckerTest {
     assertEquals("medium",result);
   }
 
+@Test
+public void testLongPasswordLength() {
+  PasswordChecker checker = new PasswordChecker(6, 12);
+  String longPassword = "Password1223339393939393939";
+
+  String result = checker.describePasswordLength(longPassword);
+
+  assertEquals("long", result);
+}
 
 
   //3 tests for isAlphanumeric
@@ -76,6 +85,8 @@ public class PasswordCheckerTest {
     assertEquals(false,result);
   }
   
+
+
   //3 tests for getDefaultBannedPasswords
   @Test
   public void testCheckIfPasswordIsBanned (){
