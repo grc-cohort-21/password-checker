@@ -60,5 +60,18 @@ public class PasswordCheckerTest {
     assertEquals(false,results);
   }
 
+  @Test
+  public void testCheckIfPartialPassword (){
+    //Arange
+    PasswordChecker checker = new PasswordChecker(6, 12);
+    String testPassword = "Password123456";
+
+    //Act
+    boolean results= checker.isBannedPassword(testPassword);
+
+    //Assert
+    assertEquals(false, results);
+  }
+
 
 }
