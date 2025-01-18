@@ -2,8 +2,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.*;
 
-import java.util.HashSet;
-
 import org.junit.jupiter.api.Test;
 
 public class PasswordCheckerTest {
@@ -42,9 +40,9 @@ public class PasswordCheckerTest {
     // Arrange
     PasswordChecker password = new PasswordChecker(6, 12);
     // Act
-    boolean onlyLetters= password.isAlphanumeric("start345");
+    boolean validPassword = password.isAlphanumeric("start345");
     // Assert
-    assertEquals(true, onlyLetters);
+    assertEquals(true, validPassword);
   }
 
   @Test
@@ -62,7 +60,7 @@ public class PasswordCheckerTest {
     // Arrange
     PasswordChecker password = new PasswordChecker(6, 12);
     // Act
-    boolean mixed = password.isAlphanumeric("345gl?ty//");
+    boolean mixed = password.isAlphanumeric("345glty/");
     // Assert
     assertEquals(false, mixed);
   }
