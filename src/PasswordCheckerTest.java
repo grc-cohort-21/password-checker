@@ -32,6 +32,19 @@ public class PasswordCheckerTest {
   }
   
   //3 tests for getDefaultBannedPasswords
+  @Test
+  public void testCheckIfPasswordIsBanned (){
+    //Arange
+    PasswordChecker checker = new PasswordChecker(6, 12);
+    String testPassword = "Password123";
+
+    //Act
+    boolean results= checker.isBannedPassword(testPassword);
+
+    //Assert
+    assertEquals(true,results);
+
+  }
 
 
 
