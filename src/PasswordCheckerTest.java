@@ -85,7 +85,18 @@ public void testLongPasswordLength() {
     assertEquals(false,result);
   }
   
+  @Test
+  public void testEmptyPassword(){
+    PasswordChecker checker = new PasswordChecker(5, 10);
+    String testPassword = "";
 
+    //Act
+    boolean result = checker.isAlphanumeric(testPassword);
+
+    //Assert
+    assertEquals(false, testPassword);
+
+  }
 
   //3 tests for getDefaultBannedPasswords
   @Test
