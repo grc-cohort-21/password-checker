@@ -28,6 +28,22 @@ public class PasswordCheckerTest {
     assertEquals("long",results);
   }
 
+
+@Test
+  public void tetLongPasswordLenght(){
+    //Arrange
+    PasswordChecker checker = new PasswordChecker(6, 12);
+    String testPassword ="Password123";
+
+    //Act
+    String result = checker.describePasswordLength(testPassword);
+
+    //Assert
+    assertEquals("medium",result);
+  }
+
+
+
   //3 tests for isAlphanumeric
   // certain common characters are not handled correctly
   @Test
