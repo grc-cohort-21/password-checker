@@ -67,13 +67,21 @@ public class PasswordCheckerTest
 
 
 
-//Arrange
 
+@Test
+public void testAlphaNumeric()
+{
 
-    //Act
+  //Arrange
+  
+  //Act
 
     //Assert
+    assertEquals()
 
+}
+
+    
     public boolean isAlphanumeric(String password) 
     {
       for (int i = 0; i < password.length() - 1; i++) 
