@@ -102,4 +102,16 @@ public class PasswordCheckerTest
     //Assert
     assertEquals(true, actualBan);
   }
+
+  @Test
+  public void testIsNotBanned() {
+     // Arrange
+     PasswordChecker  notBanned = new PasswordChecker(6, 12);
+     String password = "IShouldWork";
+     // Act
+     Boolean actualNoBan = notBanned.isBannedPassword(password);
+     // Assert
+     assertEquals(false, actualNoBan);
+  }
+  
 }
