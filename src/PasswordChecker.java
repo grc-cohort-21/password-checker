@@ -14,7 +14,7 @@ public class PasswordChecker {
      * @param shortThreshold  Length threshold for short passwords
      * @param mediumThreshold Length threshold for medium passwords
      * @param customBannedPasswords Set of banned passwords to be added to the default set
-     */
+     */     
     public PasswordChecker(int shortThreshold, int mediumThreshold, Set<String> customBannedPasswords) {
         this.shortThreshold = shortThreshold;
         this.mediumThreshold = mediumThreshold;
@@ -63,11 +63,10 @@ public class PasswordChecker {
     public boolean isAlphanumeric(String password) {
         for (int i = 0; i < password.length() - 1; i++) {
             char c = password.charAt(i);
-            if (!Character.isLetterOrDigit(c)) {
+            if (!Character.isLetterOrDigit(c)) 
+            {
                 return false;
-            } else {
-                return true;
-            }
+            } 
         }
         return true;
     }
