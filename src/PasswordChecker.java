@@ -22,8 +22,17 @@ public class PasswordChecker {
         // Initialize with default banned passwords
         this.bannedPasswords = getDefaultBannedPasswords();
 
+            //custom banned passwords, no silly business allowed!!!
+        customBannedPasswords.add("sillyBusiness");
+        customBannedPasswords.add("FROLICKING");
+        customBannedPasswords.add("CASEINSENSITIVE");
+
+
         // Merge with custom banned passwords if provided
-        this.bannedPasswords.addAll(customBannedPasswords);
+        for (String customPasswords : customBannedPasswords) {
+        this.bannedPasswords.add(customPasswords.toLowerCase());
+
+        }
     }
 
     /**

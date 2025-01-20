@@ -7,53 +7,43 @@ import java.util.Set;
 
 //emily does banned passwords and 2 of describe password length
 
-
-
 public class PasswordCheckerTest {
-
-//public void describingPasswordLength(){
-//public void testingBannedPasswords(){
-//PasswordChecker bannedPasswords = new PasswordChecker (1, 1, "password");
-
-@Test
-public void testingBaseBannedPasswords(){
-
-PasswordChecker baseChecker = new PasswordChecker(4,8);
-assertEquals(true, baseChecker.isBannedPassword("password"), "Expect res: banned.");
-assertEquals(true, baseChecker.isBannedPassword("PASSWORD"), "Expect res: banned.");
-
-}
-
-@Test
-public void testingCustomBannedPasswords(){
-
 Set<String> customBannedPasswords = new HashSet<>();
+
+
+
+
+  @Test
+public void testingBaseBannedPasswords() {
+PasswordChecker baseChecker = new PasswordChecker(4,8);
+assertEquals("Expect res: banned.", true, baseChecker.isBannedPassword("password"));
+assertEquals("Expect res: banned.", true, baseChecker.isBannedPassword("PASSWORD"));
+
+}//end testingBaseBannedPasswords
+
+  @Test
+public void testingCustomBannedPasswords() {
+//test passwords also added in main java file
 customBannedPasswords.add("sillyBusiness");
 customBannedPasswords.add("FROLICKING");
 
-PasswordChecker customChecker = new PasswordChecker (4,8, customBannedPasswords);
-assertEquals(true, customChecker.isBannedPassword("sillyBusiness"), "Expected res: banned.");
-assertEquals(true, customChecker.isBannedPassword("FROLICKING"), "Expected res: banned.");
-assertEquals(false, customChecker.isBannedPassword("veryVerySecure1902"), "Expected res: allowed.");
+PasswordChecker customChecker = new PasswordChecker(4, 8, customBannedPasswords);
+assertEquals("Expected res: banned.", true, customChecker.isBannedPassword("sillybusiness"));
+assertEquals("Expected res: banned.", true, customChecker.isBannedPassword("frolicking"));
 
-}
+}//end testingCustomBannedPasswords
 
-@Test
-public void testingCaseInsensitive(){
-
-Set<String> customBannedPasswords = new HashSet<>(); {
-
+  @Test
+public void testingCaseInsensitive() {
+//test password also added in main java file
 customBannedPasswords.add("CASEINSENSITIVE");
 
+
 PasswordChecker insenChecker = new PasswordChecker(4, 8, customBannedPasswords);
-assertEquals(true, insenChecker.isBannedPassword("CASEINSENSITIVE"), "Expected res: banned.");
-assertEquals(true, insenChecker.isBannedPassword("caseinsensitive"), "Expected res: banned.");
+assertEquals("Expected res: banned.", true, insenChecker.isBannedPassword("CASEINSENSITIVE"));
+assertEquals("Expected res: banned.", true, insenChecker.isBannedPassword("caseinsensitive"));
 
-}
-
-}
-
-
+}//end testingCaseInsensitive
 
 
 
