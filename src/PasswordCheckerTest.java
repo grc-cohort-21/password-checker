@@ -5,17 +5,32 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-//emily does banned passwords and 2 of describe password length
-
 public class PasswordCheckerTest {
 Set<String> customBannedPasswords = new HashSet<>();
 
 
+//1 test for describePasswordLength, 3 tests for is alphanumeric
 
 
   @Test
+public void testingLengthShort() {
+PasswordChecker shortChecker = new PasswordChecker(5, 10);
+String result = shortChecker.describePasswordLength("1234");
+assertEquals("Expected res: short.", result, "short");
+
+}//end testingLengthShort
+
+  @Test
+public void testingLengthMedium() {
+PasswordChecker medChecker = new PasswordChecker(5, 10);
+String result = medChecker.describePasswordLength("1234567");
+assertEquals("Expected res: medium.", result, "medium");
+
+}//end testingLengthMedium
+
+  @Test
 public void testingBaseBannedPasswords() {
-PasswordChecker baseChecker = new PasswordChecker(4,8);
+PasswordChecker baseChecker = new PasswordChecker(5, 10);
 assertEquals("Expect res: banned.", true, baseChecker.isBannedPassword("password"));
 assertEquals("Expect res: banned.", true, baseChecker.isBannedPassword("PASSWORD"));
 
@@ -27,7 +42,7 @@ public void testingCustomBannedPasswords() {
 customBannedPasswords.add("sillyBusiness");
 customBannedPasswords.add("FROLICKING");
 
-PasswordChecker customChecker = new PasswordChecker(4, 8, customBannedPasswords);
+PasswordChecker customChecker = new PasswordChecker(5, 10, customBannedPasswords);
 assertEquals("Expected res: banned.", true, customChecker.isBannedPassword("sillybusiness"));
 assertEquals("Expected res: banned.", true, customChecker.isBannedPassword("frolicking"));
 
@@ -38,8 +53,7 @@ public void testingCaseInsensitive() {
 //test password also added in main java file
 customBannedPasswords.add("CASEINSENSITIVE");
 
-
-PasswordChecker insenChecker = new PasswordChecker(4, 8, customBannedPasswords);
+PasswordChecker insenChecker = new PasswordChecker(5, 10, customBannedPasswords);
 assertEquals("Expected res: banned.", true, insenChecker.isBannedPassword("CASEINSENSITIVE"));
 assertEquals("Expected res: banned.", true, insenChecker.isBannedPassword("caseinsensitive"));
 
