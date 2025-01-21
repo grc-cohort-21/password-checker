@@ -50,17 +50,20 @@ public class PasswordCheckerTest {
     }
 
     @Test
-    public void testCustomBannedPasswords() {
-        Set<String> customBanned = Set.of("admin", "root", "12345");
-        PasswordChecker checker = new PasswordChecker(6, 10, customBanned);
+public void testCustomBannedPasswords() {
+    // Create a set of custom banned passwords
+    Set<String> customBanned = Set.of("apple", "banana", "orange");
 
-        // Test for custom banned password
-        assertTrue(checker.isBannedPassword("admin"));
+    // Initialize PasswordChecker with custom banned passwords
+    PasswordChecker checker = new PasswordChecker(6, 10, customBanned);
 
-        // Test for case-insensitive custom banned password
-        assertTrue(checker.isBannedPassword("ROOT"));
+    // Test for a custom banned password (exact match)
+    assertTrue(checker.isBannedPassword("apple"));
 
-        // Test for password not in the custom banned list
-        assertFalse(checker.isBannedPassword("safePassword"));
-    }
+    // Test for a custom banned password (case-insensitive match)
+    assertTrue(checker.isBannedPassword("BANANA"));
+
+    // Test for a password that is NOT in the custom banned list
+    assertFalse(checker.isBannedPassword("grape"));
+}
 }
