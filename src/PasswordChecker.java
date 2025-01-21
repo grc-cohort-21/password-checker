@@ -11,8 +11,8 @@ public class PasswordChecker {
      * Constructor that allows setting custom thresholds for short and medium password lengths,
      * and merges a set of custom banned passwords with the default banned passwords.
      *
-     * @param shortThreshold  Length threshold for short passwords
-     * @param mediumThreshold Length threshold for medium passwords
+     * @param shortThreshold      Length threshold for short passwords
+     * @param mediumThreshold     Length threshold for medium passwords
      * @param customBannedPasswords Set of banned passwords to be added to the default set
      */
     public PasswordChecker(int shortThreshold, int mediumThreshold, Set<String> customBannedPasswords) {
@@ -23,7 +23,9 @@ public class PasswordChecker {
         this.bannedPasswords = getDefaultBannedPasswords();
 
         // Merge with custom banned passwords if provided
-        this.bannedPasswords.addAll(customBannedPasswords);
+        if (customBannedPasswords != null) {
+            this.bannedPasswords.addAll(customBannedPasswords);
+        }
     }
 
     /**
@@ -44,6 +46,10 @@ public class PasswordChecker {
      * @return "short", "medium", or "long"
      */
     public String describePasswordLength(String password) {
+        if (password == null || password.isEmpty()) {
+            return "invalid"; // Handle null or empty passwords
+        }
+
         int length = password.length();
 
         if (length < shortThreshold) {
@@ -61,12 +67,14 @@ public class PasswordChecker {
      * @return true if the password is alphanumeric, false otherwise
      */
     public boolean isAlphanumeric(String password) {
-        for (int i = 0; i < password.length() - 1; i++) {
+        if (password == null || password.isEmpty()) {
+            return false; // Null or empty passwords are not alphanumeric
+        }
+
+        for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             if (!Character.isLetterOrDigit(c)) {
                 return false;
-            } else {
-                return true;
             }
         }
         return true;
@@ -80,6 +88,9 @@ public class PasswordChecker {
      * @return true if the password is banned, false otherwise
      */
     public boolean isBannedPassword(String password) {
+        if (password == null || password.isEmpty()) {
+            return false; // Null or empty passwords cannot be banned
+        }
         return bannedPasswords.contains(password.toLowerCase());
     }
 
