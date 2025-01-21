@@ -77,13 +77,16 @@ import java.util.Set;
     assertEquals(0, 0);
   }
 
+
+
+  //3 Tests for isAlphaNumeric
   @Test
   public void testingIsALphaNumericWithNumbers()
   { 
     customAlphaNumericPasswords.add("62840174");
     PasswordChecker alphaNumChecker = new PasswordChecker(5, 10, customAlphaNumericPasswords);
     assertEquals("Expected Result: true", true, alphaNumChecker.isAlphanumeric("62840174"));
-  }
+  }//end of test 1
 
   @Test
   public void testingIsALphaNumericWithNumbersAndLetters()
@@ -91,7 +94,7 @@ import java.util.Set;
     customAlphaNumericPasswords.add("moose1234");
     PasswordChecker alphaNumCharChecker = new PasswordChecker(5, 10, customAlphaNumericPasswords);
     assertEquals("Expected Result: true", true, alphaNumCharChecker.isAlphanumeric("moose1234"));
-  }
+  }//end of test two
 
   @Test
   public void testingIsALphaNumericWithSymbols()
@@ -99,5 +102,5 @@ import java.util.Set;
     customAlphaNumericPasswords.add("p@ss0wrd!");
     PasswordChecker alphaSymbolChecker = new PasswordChecker(5, 10, customAlphaNumericPasswords);
     assertEquals("Expected Result: false", false, alphaSymbolChecker.isAlphanumeric("p@ssword!"));
-  }
+  }//end of test three
 }
