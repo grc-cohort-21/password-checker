@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public class PasswordChecker {
     private int shortThreshold;
@@ -27,12 +28,11 @@ public class PasswordChecker {
         customBannedPasswords.add("FROLICKING");
         customBannedPasswords.add("CASEINSENSITIVE");
 
-
         // Merge with custom banned passwords if provided
         for (String customPasswords : customBannedPasswords) {
         this.bannedPasswords.add(customPasswords.toLowerCase());
-
         }
+
     }
 
     /**
@@ -70,15 +70,19 @@ public class PasswordChecker {
      * @return true if the password is alphanumeric, false otherwise
      */
     public boolean isAlphanumeric(String password) {
-        for (int i = 0; i < password.length() - 1; i++) {
-            char c = password.charAt(i);
-            if (!Character.isLetterOrDigit(c)) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-        return true;
+        // for (int i = 0; i < password.length() - 1; i++) {
+        //     char c = password.charAt(i);
+        //     // if (!Character.isLetterOrDigit(c)) {
+        //     //     return false;
+        //     // } 
+            
+        // }
+        // return true;
+        Pattern p = Pattern.compile("[^a-zA-Z0-9]");
+        boolean hasSpecialChar = !p.matcher(password).find();
+        return hasSpecialChar;
+
+        //this code was modified from https://stackoverflow.com/questions/8248277/how-to-determine-if-a-string-has-non-alphanumeric-characters
     }
 
     /**
