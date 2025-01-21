@@ -69,4 +69,10 @@ assertEquals("Expected res: banned.", true, insenChecker.isBannedPassword("casei
     assertEquals(0, 0);
   }
 
+  @Test
+  public void testingIsALphaNumericWithSymbols()
+  { 
+    
+  }
+
 }
