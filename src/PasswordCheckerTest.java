@@ -9,9 +9,7 @@ public class PasswordCheckerTest {
 Set<String> customBannedPasswords = new HashSet<>();
 
 
-//1 test for describePasswordLength, 3 tests for is alphanumeric
-
-
+//3 tests for describePasswordLength
   @Test
 public void testingLengthShort() {
 PasswordChecker shortChecker = new PasswordChecker(5, 10);
@@ -28,6 +26,16 @@ assertEquals("Expected res: medium.", result, "medium");
 
 }//end testingLengthMedium
 
+  @Test
+public void testingLengthLong() {
+PasswordChecker longChecker = new PasswordChecker(5, 10);
+String result = longChecker.describePasswordLength("123456790123");
+assertEquals("Expected res: long.", result, "long");
+}//end testingLengthLong
+
+
+
+//3 tests for bannedPasswords
   @Test
 public void testingBaseBannedPasswords() {
 PasswordChecker baseChecker = new PasswordChecker(5, 10);
@@ -62,17 +70,17 @@ assertEquals("Expected res: banned.", true, insenChecker.isBannedPassword("casei
 
 
 
-  @Test
-  public void testDummy() {
-    // This test is used only to validate that your VS Code setup is working
-    // Delete this test after you have written your other tests
-    assertEquals(0, 0);
-  }
+@Test
+public void testDummy() {
+  // This test is used only to validate that your VS Code setup is working
+  // Delete this test after you have written your other tests
+  assertEquals(0, 0);
+}
 
-  @Test
-  public void testingIsALphaNumericWithSymbols()
-  { 
-    
-  }
+@Test
+public void testingIsALphaNumericWithSymbols()
+{ 
+  
+}
 
 }
