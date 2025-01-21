@@ -1,5 +1,7 @@
 import static org.junit.Assert.assertEquals;
 
+import java.util.concurrent.ArrayBlockingQueue;
+
 import org.junit.jupiter.api.Test;
 
 public class PasswordCheckerTest {
@@ -8,6 +10,10 @@ public class PasswordCheckerTest {
   public void testDummy() {
     // This test is used only to validate that your VS Code setup is working
     // Delete this test after you have written your other tests
+
+    // Arrange 
+    // Act 
+    // Assert 
     assertEquals(0, 0);
   }
 
