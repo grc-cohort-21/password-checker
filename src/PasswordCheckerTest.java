@@ -1,90 +1,80 @@
-import static org.junit.Assert.assertEquals; //change
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 public class PasswordCheckerTest {
-
   @Test
-  public void testDummy() {
-    // This test is used only to validate that your VS Code setup is working
-    // Delete this test after you have written your other tests
-    assertEquals(0, 0);
+  public void testIfCaseSensBanned() {
+    PasswordChecker check = new PasswordChecker(5, 10);
+    String password = "hELlO";
+    boolean actualTF = check.isBannedPassword(password);
+    assertEquals("Expected: True",true,actualTF);
   }
   @Test
-  public void testIfCaseSensBanned()) {
-    isBannedPassword bannedPsw = new isBannedPassword("hELlO");
-    boolean actualTF = bannedPasswords.contains(bannedPsw);
-    assertEquals(true,)
+  public void testifAllCpasBannedPswisBanned() {
+    PasswordChecker check = new PasswordChecker(5, 10);
+    String password = "LETMEIN";
+    boolean actualTF = check.isBannedPassword(password);
+    assertEquals("Expected: True",true,actualTF);
   }
-  @Test public void testTwo() {
-    // Arrange
+  @Test
+  public void testIfPartialBannedPswisNOTbanned() {
+    PasswordChecker check = new PasswordChecker(5, 10);
+    String password = "qwert";
+    boolean actualTF = check.isBannedPassword(password);
+    assertEquals("Expected: False",false,actualTF);
+  }
+  @Test
+  public void testIfoneCharLengthPswistooshort() {
+    PasswordChecker check = new PasswordChecker(5, 10);
+    String password = "a";
+    String actualLength = check.describePasswordLength(password);
+    assertEquals("Expected: short","short",actualLength);
+  }
 
-    // Act
+  // @Test public void testFive() {
+  //   // Arrange
 
-    // Assert
+  //   // Act
+
+  //   // Assert
     
-  }
+  // }
 
-  @Test public void testThree() {
-    // Arrange
+  // @Test public void testSix() {
+  //   // Arrange
 
-    // Act
+  //   // Act
 
-    // Assert
+  //   // Assert
     
-  }
+  // }
 
-  @Test public void testFour() {
-    // Arrange
+  // @Test public void testIfAllUpperCaseBannedPasswordsWork() { // test 7
+  //   // Arrange - all the stuff you need before starting your test
+  //   isBannedPassword uppercaseHello = new isBannedPassword("HELLO");
 
-    // Act
+  //   // Act - actually making something happen; calling a method
 
-    // Assert
+  //   // Assert - did what i actually got match what i was expecting
+  // }
+
+  // @Test public void testEight() {
+  //   // Arrange
+
+  //   // Act
+
+  //   // Assert
     
-  }
+  // }
 
-  @Test public void testFive() {
-    // Arrange
+  // @Test public void testNine() {
+  //   // Arrange
 
-    // Act
+  //   // Act
 
-    // Assert
+  //   // Assert
     
-  }
-
-  @Test public void testSix() {
-    // Arrange
-
-    // Act
-
-    // Assert
-    
-  }
-
-  @Test public void testIfAllUpperCaseBannedPasswordsWork() { // test 7
-    // Arrange - all the stuff you need before starting your test
-    isBannedPassword uppercaseHello = new isBannedPassword("HELLO");
-
-    // Act - actually making something happen; calling a method
-
-    // Assert - did what i actually got match what i was expecting
-  }
-
-  @Test public void testEight() {
-    // Arrange
-
-    // Act
-
-    // Assert
-    
-  }
-
-  @Test public void testNine() {
-    // Arrange
-
-    // Act
-
-    // Assert
-    
-  }
+  // }
 }
