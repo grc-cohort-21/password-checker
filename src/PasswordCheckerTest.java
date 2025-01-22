@@ -48,14 +48,11 @@ public class PasswordCheckerTest {
   @Test
   public void testifalphanumericwhenmixed() { // test 7
     // Arrange - all the stuff you need before starting your test
-    String password = "HELLO";
-    PasswordChecker checker = new PasswordChecker(5, 10);
-
+    PasswordChecker check = new PasswordChecker(5, 10);
+    boolean actualTF = check.isAlphanumeric("dsajhk5435");
     // Act - actually making something happen; calling a method
-    Boolean actual = checker.isBannedPassword(password);
-
+    assertEquals("Expected: True",true,actualTF);
     // Assert - did what i actually got match what i was expecting
-    assertEquals(true, actual);
   }
   @Test
   public void testifalphamericwhenallnumbers() {
