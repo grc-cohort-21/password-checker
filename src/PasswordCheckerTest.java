@@ -11,11 +11,11 @@ public class PasswordCheckerTest {
     assertEquals(0, 0);
   }
   @Test
-  public void testIfCaseSensBanned()) {
+  /*public void testIfCaseSensBanned()) {
     isBannedPassword bannedPsw = new isBannedPassword("hELlO");
     boolean actualTF = bannedPasswords.contains(bannedPsw);
     assertEquals(true,)
-  }
+  }*/
   @Test public void testTwo() {
     // Arrange
 
@@ -63,11 +63,14 @@ public class PasswordCheckerTest {
 
   @Test public void testIfAllUpperCaseBannedPasswordsWork() { // test 7
     // Arrange - all the stuff you need before starting your test
-    isBannedPassword uppercaseHello = new isBannedPassword("HELLO");
+    String password = "HELLO";
+    PasswordChecker checker = new PasswordChecker(5, 10);
 
     // Act - actually making something happen; calling a method
+    Boolean actual = checker.isBannedPassword(password);
 
     // Assert - did what i actually got match what i was expecting
+    assertEquals(true, actual);
   }
 
   @Test public void testEight() {
